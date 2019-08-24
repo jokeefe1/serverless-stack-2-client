@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from "react";
 import { Auth } from "aws-amplify";
-import { Link, withRouter } from "react-router-dom";
+import React, { Component, Fragment } from "react";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import Routes from "./Routes";
+import { Link, withRouter } from "react-router-dom";
 import "./App.css";
+import Routes from "./Routes";
 
 class App extends Component {
   constructor(props) {
@@ -61,15 +61,20 @@ class App extends Component {
           <Navbar.Collapse>
             <Nav pullRight>
               {this.state.isAuthenticated
-                ? <NavItem onClick={this.handleLogout}>Logout</NavItem>
+                ? <Fragment>
+                  <LinkContainer to="/settings">
+                    <NavItem>Settings</NavItem>
+                  </LinkContainer>
+                  <NavItem onClick={this.handleLogout}>Logout</NavItem>
+                </Fragment>
                 : <Fragment>
-                    <LinkContainer to="/signup">
-                      <NavItem>Signup</NavItem>
-                    </LinkContainer>
-                    <LinkContainer to="/login">
-                      <NavItem>Login</NavItem>
-                    </LinkContainer>
-                  </Fragment>
+                  <LinkContainer to="/signup">
+                    <NavItem>Signup</NavItem>
+                  </LinkContainer>
+                  <LinkContainer to="/login">
+                    <NavItem>Login</NavItem>
+                  </LinkContainer>
+                </Fragment>
               }
             </Nav>
           </Navbar.Collapse>
@@ -78,6 +83,7 @@ class App extends Component {
       </div>
     );
   }
+
 }
 
 export default withRouter(App);
