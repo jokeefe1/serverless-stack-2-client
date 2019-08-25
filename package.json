@@ -9,14 +9,15 @@
     "react-dom": "^16.5.2",
     "react-router-bootstrap": "^0.24.4",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.0.4"
+    "react-stripe-elements": "^4.0.1",
+    "react-scripts": "3.1.1"
   },
- "scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test --env=jsdom",
-  "eject": "react-scripts eject"
-},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
